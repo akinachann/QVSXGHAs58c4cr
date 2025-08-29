@@ -9,10 +9,6 @@ payload:
 #订阅：https://raw.githubusercontent.com/2Gardon/SM-Ad-FuckU-hosts/refs/heads/master/SMAdHosts
 
 
-127.0.0.1 localhost
-::1 ip6-localhost
-
-
 #———————社•交•类———————
 #QQ
 - DOMAIN,iv6.gtimg.cn  #个性字体（副作用未知）
