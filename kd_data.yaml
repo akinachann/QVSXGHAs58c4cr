@@ -42,73 +42,73 @@ rule-providers:
     lancidr: { type: http, behavior: ipcidr, url: 'https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/lancidr.txt', path: ./ruleset/lancidr.yaml, interval: 86400 }
     applications: { type: http, behavior: classical, url: 'https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/applications.txt', path: ./ruleset/applications.yaml, interval: 86400 }
 proxies:
-    - { name: '剩余流量：35 GB', type: trojan, server: chat.redbookai.xyz, port: 17101, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
-    - { name: '距离下次重置剩余：16 天', type: trojan, server: chat.redbookai.xyz, port: 17101, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
-    - { name: 套餐到期：2025-10-14, type: trojan, server: chat.redbookai.xyz, port: 17101, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
-    - { name: 'Hong Kong 01', type: trojan, server: chat.redbookai.xyz, port: 17101, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
-    - { name: 'Hong Kong 02', type: trojan, server: chat.redbookai.xyz, port: 17102, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
-    - { name: 'Hong Kong 03', type: trojan, server: chat.redbookai.xyz, port: 17103, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
-    - { name: 'Hong Kong 04', type: trojan, server: chat.redbookai.xyz, port: 17104, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
-    - { name: 'Hong Kong 05', type: trojan, server: chat.redbookai.xyz, port: 17105, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
-    - { name: 'Hong Kong 06', type: trojan, server: chat.redbookai.xyz, port: 17106, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
-    - { name: 'Hong Kong 07', type: trojan, server: chat.redbookai.xyz, port: 17107, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
-    - { name: 'Hong Kong 08', type: trojan, server: chat.redbookai.xyz, port: 17108, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
-    - { name: 'Hong Kong 09', type: trojan, server: chat.redbookai.xyz, port: 17109, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
-    - { name: 'Hong Kong 10', type: trojan, server: chat.redbookai.xyz, port: 17110, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
-    - { name: 'Singapore 01', type: trojan, server: chat.redbookai.xyz, port: 17121, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
-    - { name: 'Singapore 02', type: trojan, server: chat.redbookai.xyz, port: 17122, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
-    - { name: 'Singapore 03', type: trojan, server: chat.redbookai.xyz, port: 17123, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
-    - { name: 'Singapore 04', type: trojan, server: chat.redbookai.xyz, port: 17124, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
-    - { name: 'Singapore 05', type: trojan, server: chat.redbookai.xyz, port: 17125, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
-    - { name: 'Singapore 06', type: trojan, server: chat.redbookai.xyz, port: 17126, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
-    - { name: 'Singapore 07', type: trojan, server: chat.redbookai.xyz, port: 17127, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
-    - { name: VIP-video, type: trojan, server: chat.redbookai.xyz, port: 17401, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
-    - { name: 'Japan 01', type: trojan, server: chat.redbookai.xyz, port: 17141, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
-    - { name: 'Japan 02', type: trojan, server: chat.redbookai.xyz, port: 17142, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
-    - { name: 'Japan 03', type: trojan, server: chat.redbookai.xyz, port: 17143, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
-    - { name: 'Japan 04', type: trojan, server: chat.redbookai.xyz, port: 17144, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
-    - { name: 'Japan 05', type: trojan, server: chat.redbookai.xyz, port: 17145, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
-    - { name: 'United States 01', type: trojan, server: chat.redbookai.xyz, port: 17161, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
-    - { name: 'United States 02', type: trojan, server: chat.redbookai.xyz, port: 17162, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
-    - { name: 'United States 03', type: trojan, server: chat.redbookai.xyz, port: 17163, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
-    - { name: 'United States 04', type: trojan, server: chat.redbookai.xyz, port: 17164, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
-    - { name: 'United States 05', type: trojan, server: chat.redbookai.xyz, port: 17165, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
-    - { name: 'Tai wan 01', type: trojan, server: chat.redbookai.xyz, port: 17181, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
-    - { name: 'Tai wan 02', type: trojan, server: chat.redbookai.xyz, port: 17182, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
-    - { name: 'Tai wan 03', type: trojan, server: chat.redbookai.xyz, port: 17173, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
-    - { name: 'Tai wan 04', type: trojan, server: chat.redbookai.xyz, port: 17184, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
-    - { name: 'Tai wan 05', type: trojan, server: chat.redbookai.xyz, port: 17185, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
-    - { name: 'Korea 01', type: trojan, server: chat.redbookai.xyz, port: 17201, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
-    - { name: 'Korea 02', type: trojan, server: chat.redbookai.xyz, port: 17202, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
-    - { name: Indonesia, type: trojan, server: chat.redbookai.xyz, port: 17203, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
-    - { name: Thailand, type: trojan, server: chat.redbookai.xyz, port: 17204, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
-    - { name: Australia, type: trojan, server: chat.redbookai.xyz, port: 17205, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
-    - { name: Vietnam, type: trojan, server: chat.redbookai.xyz, port: 17206, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
-    - { name: 'Malaysia x3.0', type: trojan, server: chat.redbookai.xyz, port: 17207, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
-    - { name: 'Macao x2.0', type: trojan, server: chat.redbookai.xyz, port: 17208, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
-    - { name: 'Philippines x2.0', type: trojan, server: chat.redbookai.xyz, port: 17209, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
-    - { name: 'Cambodia x2.0', type: trojan, server: chat.redbookai.xyz, port: 17210, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
-    - { name: 'Laos x2.0', type: trojan, server: chat.redbookai.xyz, port: 17211, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
-    - { name: 'Myanmar x2.0', type: trojan, server: chat.redbookai.xyz, port: 17212, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
-    - { name: 'Pakistan x2.0', type: trojan, server: chat.redbookai.xyz, port: 17213, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
-    - { name: 'Argentina x2.0', type: trojan, server: chat.redbookai.xyz, port: 17214, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
-    - { name: 'Egypt x2.0', type: trojan, server: chat.redbookai.xyz, port: 17215, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
-    - { name: Dubai, type: trojan, server: chat.redbookai.xyz, port: 17301, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
-    - { name: France, type: trojan, server: chat.redbookai.xyz, port: 17302, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
-    - { name: Netherlands, type: trojan, server: chat.redbookai.xyz, port: 17303, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
-    - { name: Sweden, type: trojan, server: chat.redbookai.xyz, port: 17304, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
-    - { name: 'Saudi Arabia', type: trojan, server: chat.redbookai.xyz, port: 17305, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
-    - { name: Israel, type: trojan, server: chat.redbookai.xyz, port: 17306, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
-    - { name: 'South Africa', type: trojan, server: chat.redbookai.xyz, port: 17307, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
-    - { name: Brazil, type: trojan, server: chat.redbookai.xyz, port: 17308, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
-    - { name: Germany, type: trojan, server: chat.redbookai.xyz, port: 17309, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
-    - { name: 'Nigeria x3.0', type: trojan, server: chat.redbookai.xyz, port: 17310, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
-    - { name: Turkey, type: trojan, server: chat.redbookai.xyz, port: 17311, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
-    - { name: 'United Kingdom', type: trojan, server: chat.redbookai.xyz, port: 17312, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
+    - { name: '剩余流量：35 GB', type: trojan, server: guangdong-cn.digital-nvme.com, port: 17101, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
+    - { name: '距离下次重置剩余：30 天', type: trojan, server: guangdong-cn.digital-nvme.com, port: 17101, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
+    - { name: 套餐到期：2025-10-14, type: trojan, server: guangdong-cn.digital-nvme.com, port: 17101, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
+    - { name: 'Hong Kong 01', type: trojan, server: guangdong-cn.digital-nvme.com, port: 17101, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
+    - { name: 'Hong Kong 02', type: trojan, server: guangdong-cn.digital-nvme.com, port: 17102, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
+    - { name: 'Hong Kong 03', type: trojan, server: guangdong-cn.digital-nvme.com, port: 17103, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
+    - { name: 'Hong Kong 04', type: trojan, server: guangdong-cn.digital-nvme.com, port: 17104, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
+    - { name: 'Hong Kong 05', type: trojan, server: guangdong-cn.digital-nvme.com, port: 17105, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
+    - { name: 'Hong Kong 06', type: trojan, server: guangdong-cn.digital-nvme.com, port: 17106, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
+    - { name: 'Hong Kong 07', type: trojan, server: guangdong-cn.digital-nvme.com, port: 17107, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
+    - { name: 'Hong Kong 08', type: trojan, server: guangdong-cn.digital-nvme.com, port: 17108, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
+    - { name: 'Hong Kong 09', type: trojan, server: guangdong-cn.digital-nvme.com, port: 17109, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
+    - { name: 'Hong Kong 10', type: trojan, server: guangdong-cn.digital-nvme.com, port: 17110, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
+    - { name: 'Singapore 01', type: trojan, server: guangdong-cn.digital-nvme.com, port: 17121, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
+    - { name: 'Singapore 02', type: trojan, server: guangdong-cn.digital-nvme.com, port: 17122, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
+    - { name: 'Singapore 03', type: trojan, server: guangdong-cn.digital-nvme.com, port: 17123, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
+    - { name: 'Singapore 04', type: trojan, server: guangdong-cn.digital-nvme.com, port: 17124, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
+    - { name: 'Singapore 05', type: trojan, server: guangdong-cn.digital-nvme.com, port: 17125, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
+    - { name: 'Singapore 06', type: trojan, server: guangdong-cn.digital-nvme.com, port: 17126, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
+    - { name: 'Singapore 07', type: trojan, server: guangdong-cn.digital-nvme.com, port: 17127, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
+    - { name: VIP-video, type: trojan, server: guangdong-cn.digital-nvme.com, port: 17401, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
+    - { name: 'Japan 01', type: trojan, server: guangdong-cn.digital-nvme.com, port: 17141, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
+    - { name: 'Japan 02', type: trojan, server: guangdong-cn.digital-nvme.com, port: 17142, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
+    - { name: 'Japan 03', type: trojan, server: guangdong-cn.digital-nvme.com, port: 17143, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
+    - { name: 'Japan 04', type: trojan, server: guangdong-cn.digital-nvme.com, port: 17144, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
+    - { name: 'Japan 05', type: trojan, server: guangdong-cn.digital-nvme.com, port: 17145, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
+    - { name: 'United States 01', type: trojan, server: guangdong-cn.digital-nvme.com, port: 17161, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
+    - { name: 'United States 02', type: trojan, server: guangdong-cn.digital-nvme.com, port: 17162, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
+    - { name: 'United States 03', type: trojan, server: guangdong-cn.digital-nvme.com, port: 17163, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
+    - { name: 'United States 04', type: trojan, server: guangdong-cn.digital-nvme.com, port: 17164, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
+    - { name: 'United States 05', type: trojan, server: guangdong-cn.digital-nvme.com, port: 17165, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
+    - { name: 'Tai wan 01', type: trojan, server: guangdong-cn.digital-nvme.com, port: 17181, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
+    - { name: 'Tai wan 02', type: trojan, server: guangdong-cn.digital-nvme.com, port: 17182, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
+    - { name: 'Tai wan 03', type: trojan, server: guangdong-cn.digital-nvme.com, port: 17173, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
+    - { name: 'Tai wan 04', type: trojan, server: guangdong-cn.digital-nvme.com, port: 17184, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
+    - { name: 'Tai wan 05', type: trojan, server: guangdong-cn.digital-nvme.com, port: 17185, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
+    - { name: 'Korea 01', type: trojan, server: guangdong-cn.digital-nvme.com, port: 17201, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
+    - { name: 'Korea 02', type: trojan, server: guangdong-cn.digital-nvme.com, port: 17202, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
+    - { name: Indonesia, type: trojan, server: guangdong-cn.digital-nvme.com, port: 17203, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
+    - { name: Thailand, type: trojan, server: guangdong-cn.digital-nvme.com, port: 17204, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
+    - { name: Australia, type: trojan, server: guangdong-cn.digital-nvme.com, port: 17205, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
+    - { name: Vietnam, type: trojan, server: guangdong-cn.digital-nvme.com, port: 17206, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
+    - { name: 'Malaysia x3.0', type: trojan, server: guangdong-cn.digital-nvme.com, port: 17207, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
+    - { name: 'Macao x2.0', type: trojan, server: guangdong-cn.digital-nvme.com, port: 17208, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
+    - { name: 'Philippines x2.0', type: trojan, server: guangdong-cn.digital-nvme.com, port: 17209, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
+    - { name: 'Cambodia x2.0', type: trojan, server: guangdong-cn.digital-nvme.com, port: 17210, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
+    - { name: 'Laos x2.0', type: trojan, server: guangdong-cn.digital-nvme.com, port: 17211, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
+    - { name: 'Myanmar x2.0', type: trojan, server: guangdong-cn.digital-nvme.com, port: 17212, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
+    - { name: 'Pakistan x2.0', type: trojan, server: guangdong-cn.digital-nvme.com, port: 17213, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
+    - { name: 'Argentina x2.0', type: trojan, server: guangdong-cn.digital-nvme.com, port: 17214, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
+    - { name: 'Egypt x2.0', type: trojan, server: guangdong-cn.digital-nvme.com, port: 17215, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
+    - { name: Dubai, type: trojan, server: guangdong-cn.digital-nvme.com, port: 17301, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
+    - { name: France, type: trojan, server: guangdong-cn.digital-nvme.com, port: 17302, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
+    - { name: Netherlands, type: trojan, server: guangdong-cn.digital-nvme.com, port: 17303, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
+    - { name: Sweden, type: trojan, server: guangdong-cn.digital-nvme.com, port: 17304, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
+    - { name: 'Saudi Arabia', type: trojan, server: guangdong-cn.digital-nvme.com, port: 17305, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
+    - { name: Israel, type: trojan, server: guangdong-cn.digital-nvme.com, port: 17306, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
+    - { name: 'South Africa', type: trojan, server: guangdong-cn.digital-nvme.com, port: 17307, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
+    - { name: Brazil, type: trojan, server: guangdong-cn.digital-nvme.com, port: 17308, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
+    - { name: Germany, type: trojan, server: guangdong-cn.digital-nvme.com, port: 17309, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
+    - { name: 'Nigeria x3.0', type: trojan, server: guangdong-cn.digital-nvme.com, port: 17310, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
+    - { name: Turkey, type: trojan, server: guangdong-cn.digital-nvme.com, port: 17311, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
+    - { name: 'United Kingdom', type: trojan, server: guangdong-cn.digital-nvme.com, port: 17312, password: 68309d6c-6b6a-4a85-b909-ea2767a69f07, udp: true, sni: mmbiz.qpic.cn, skip-cert-verify: true }
 proxy-groups:
-    - { name: KooDog, type: select, proxies: ['剩余流量：35 GB', '距离下次重置剩余：16 天', 套餐到期：2025-10-14, 'Hong Kong 01', 'Hong Kong 02', 'Hong Kong 03', 'Hong Kong 04', 'Hong Kong 05', 'Hong Kong 06', 'Hong Kong 07', 'Hong Kong 08', 'Hong Kong 09', 'Hong Kong 10', 'Singapore 01', 'Singapore 02', 'Singapore 03', 'Singapore 04', 'Singapore 05', 'Singapore 06', 'Singapore 07', VIP-video, 'Japan 01', 'Japan 02', 'Japan 03', 'Japan 04', 'Japan 05', 'United States 01', 'United States 02', 'United States 03', 'United States 04', 'United States 05', 'Tai wan 01', 'Tai wan 02', 'Tai wan 03', 'Tai wan 04', 'Tai wan 05', 'Korea 01', 'Korea 02', Indonesia, Thailand, Australia, Vietnam, 'Malaysia x3.0', 'Macao x2.0', 'Philippines x2.0', 'Cambodia x2.0', 'Laos x2.0', 'Myanmar x2.0', 'Pakistan x2.0', 'Argentina x2.0', 'Egypt x2.0', Dubai, France, Netherlands, Sweden, 'Saudi Arabia', Israel, 'South Africa', Brazil, Germany, 'Nigeria x3.0', Turkey, 'United Kingdom'] }
-    - { name: Telegram, type: select, proxies: ['剩余流量：35 GB', '距离下次重置剩余：16 天', 套餐到期：2025-10-14, 'Hong Kong 01', 'Hong Kong 02', 'Hong Kong 03', 'Hong Kong 04', 'Hong Kong 05', 'Hong Kong 06', 'Hong Kong 07', 'Hong Kong 08', 'Hong Kong 09', 'Hong Kong 10', 'Singapore 01', 'Singapore 02', 'Singapore 03', 'Singapore 04', 'Singapore 05', 'Singapore 06', 'Singapore 07', VIP-video, 'Japan 01', 'Japan 02', 'Japan 03', 'Japan 04', 'Japan 05', 'United States 01', 'United States 02', 'United States 03', 'United States 04', 'United States 05', 'Tai wan 01', 'Tai wan 02', 'Tai wan 03', 'Tai wan 04', 'Tai wan 05', 'Korea 01', 'Korea 02', Indonesia, Thailand, Australia, Vietnam, 'Malaysia x3.0', 'Macao x2.0', 'Philippines x2.0', 'Cambodia x2.0', 'Laos x2.0', 'Myanmar x2.0', 'Pakistan x2.0', 'Argentina x2.0', 'Egypt x2.0', Dubai, France, Netherlands, Sweden, 'Saudi Arabia', Israel, 'South Africa', Brazil, Germany, 'Nigeria x3.0', Turkey, 'United Kingdom'] }
-    - { name: ChatGPT, type: select, proxies: ['剩余流量：35 GB', '距离下次重置剩余：16 天', 套餐到期：2025-10-14, 'Hong Kong 01', 'Hong Kong 02', 'Hong Kong 03', 'Hong Kong 04', 'Hong Kong 05', 'Hong Kong 06', 'Hong Kong 07', 'Hong Kong 08', 'Hong Kong 09', 'Hong Kong 10', 'Singapore 01', 'Singapore 02', 'Singapore 03', 'Singapore 04', 'Singapore 05', 'Singapore 06', 'Singapore 07', VIP-video, 'Japan 01', 'Japan 02', 'Japan 03', 'Japan 04', 'Japan 05', 'United States 01', 'United States 02', 'United States 03', 'United States 04', 'United States 05', 'Tai wan 01', 'Tai wan 02', 'Tai wan 03', 'Tai wan 04', 'Tai wan 05', 'Korea 01', 'Korea 02', Indonesia, Thailand, Australia, Vietnam, 'Malaysia x3.0', 'Macao x2.0', 'Philippines x2.0', 'Cambodia x2.0', 'Laos x2.0', 'Myanmar x2.0', 'Pakistan x2.0', 'Argentina x2.0', 'Egypt x2.0', Dubai, France, Netherlands, Sweden, 'Saudi Arabia', Israel, 'South Africa', Brazil, Germany, 'Nigeria x3.0', Turkey, 'United Kingdom'] }
+    - { name: KooDog, type: select, proxies: ['剩余流量：35 GB', '距离下次重置剩余：30 天', 套餐到期：2025-10-14, 'Hong Kong 01', 'Hong Kong 02', 'Hong Kong 03', 'Hong Kong 04', 'Hong Kong 05', 'Hong Kong 06', 'Hong Kong 07', 'Hong Kong 08', 'Hong Kong 09', 'Hong Kong 10', 'Singapore 01', 'Singapore 02', 'Singapore 03', 'Singapore 04', 'Singapore 05', 'Singapore 06', 'Singapore 07', VIP-video, 'Japan 01', 'Japan 02', 'Japan 03', 'Japan 04', 'Japan 05', 'United States 01', 'United States 02', 'United States 03', 'United States 04', 'United States 05', 'Tai wan 01', 'Tai wan 02', 'Tai wan 03', 'Tai wan 04', 'Tai wan 05', 'Korea 01', 'Korea 02', Indonesia, Thailand, Australia, Vietnam, 'Malaysia x3.0', 'Macao x2.0', 'Philippines x2.0', 'Cambodia x2.0', 'Laos x2.0', 'Myanmar x2.0', 'Pakistan x2.0', 'Argentina x2.0', 'Egypt x2.0', Dubai, France, Netherlands, Sweden, 'Saudi Arabia', Israel, 'South Africa', Brazil, Germany, 'Nigeria x3.0', Turkey, 'United Kingdom'] }
+    - { name: Telegram, type: select, proxies: ['剩余流量：35 GB', '距离下次重置剩余：30 天', 套餐到期：2025-10-14, 'Hong Kong 01', 'Hong Kong 02', 'Hong Kong 03', 'Hong Kong 04', 'Hong Kong 05', 'Hong Kong 06', 'Hong Kong 07', 'Hong Kong 08', 'Hong Kong 09', 'Hong Kong 10', 'Singapore 01', 'Singapore 02', 'Singapore 03', 'Singapore 04', 'Singapore 05', 'Singapore 06', 'Singapore 07', VIP-video, 'Japan 01', 'Japan 02', 'Japan 03', 'Japan 04', 'Japan 05', 'United States 01', 'United States 02', 'United States 03', 'United States 04', 'United States 05', 'Tai wan 01', 'Tai wan 02', 'Tai wan 03', 'Tai wan 04', 'Tai wan 05', 'Korea 01', 'Korea 02', Indonesia, Thailand, Australia, Vietnam, 'Malaysia x3.0', 'Macao x2.0', 'Philippines x2.0', 'Cambodia x2.0', 'Laos x2.0', 'Myanmar x2.0', 'Pakistan x2.0', 'Argentina x2.0', 'Egypt x2.0', Dubai, France, Netherlands, Sweden, 'Saudi Arabia', Israel, 'South Africa', Brazil, Germany, 'Nigeria x3.0', Turkey, 'United Kingdom'] }
+    - { name: ChatGPT, type: select, proxies: ['剩余流量：35 GB', '距离下次重置剩余：30 天', 套餐到期：2025-10-14, 'Hong Kong 01', 'Hong Kong 02', 'Hong Kong 03', 'Hong Kong 04', 'Hong Kong 05', 'Hong Kong 06', 'Hong Kong 07', 'Hong Kong 08', 'Hong Kong 09', 'Hong Kong 10', 'Singapore 01', 'Singapore 02', 'Singapore 03', 'Singapore 04', 'Singapore 05', 'Singapore 06', 'Singapore 07', VIP-video, 'Japan 01', 'Japan 02', 'Japan 03', 'Japan 04', 'Japan 05', 'United States 01', 'United States 02', 'United States 03', 'United States 04', 'United States 05', 'Tai wan 01', 'Tai wan 02', 'Tai wan 03', 'Tai wan 04', 'Tai wan 05', 'Korea 01', 'Korea 02', Indonesia, Thailand, Australia, Vietnam, 'Malaysia x3.0', 'Macao x2.0', 'Philippines x2.0', 'Cambodia x2.0', 'Laos x2.0', 'Myanmar x2.0', 'Pakistan x2.0', 'Argentina x2.0', 'Egypt x2.0', Dubai, France, Netherlands, Sweden, 'Saudi Arabia', Israel, 'South Africa', Brazil, Germany, 'Nigeria x3.0', Turkey, 'United Kingdom'] }
 rules:
     - 'DOMAIN,8.134.152.191:13888,DIRECT'
     - 'DOMAIN,apd-pcdnwxlogin.teg.tencent-cloud.net,DIRECT'
@@ -147,6 +147,7 @@ rules:
     - 'DOMAIN-SUFFIX,xxlb.net,KooDog'
     - 'DOMAIN-SUFFIX,s.outong-valve.com,DIRECT'
     - 'DOMAIN-SUFFIX,liminalnet.site,KooDog'
+    - 'DOMAIN-SUFFIX,ectrip.com,DIRECT'
     - 'PROCESS-NAME,WsaClient.exe,KooDog'
     - 'PROCESS-NAME,wpsoffice.exe,DIRECT'
     - 'PROCESS-NAME,wps.exe,DIRECT'
@@ -206,7 +207,6 @@ rules:
     - 'PROCESS-NAME,MadGlobal.exe,DIRECT'
     - 'PROCESS-NAME,比特浏览器.exe,DIRECT'
     - 'PROCESS-NAME,uprock-mining.exe,DIRECT'
-    - 'PROCESS-NAME,msedge.exe,DIRECT'
     - 'PROCESS-NAME,phpcoin-wallet-win.exe,DIRECT'
     - 'PROCESS-NAME,NightCrowsGLauncher.exe,DIRECT'
     - 'PROCESS-NAME,LetsPRO.exe,DIRECT'
@@ -253,4 +253,5 @@ rules:
     - 'IP-CIDR,8.134.107.77/32,DIRECT,no-resolve'
     - 'IP-CIDR,8.134.250.119/32,DIRECT,no-resolve'
     - 'IP-CIDR,132.232.133.234/32,DIRECT,no-resolve'
+    - 'IP-CIDR,139.155.145.118/32,DIRECT,no-resolve'
     - 'MATCH,KooDog'
