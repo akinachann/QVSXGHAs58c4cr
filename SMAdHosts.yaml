@@ -1,7 +1,7 @@
 #————SM广告丟那吗hosts————
-#版本：2.8
-#更新日期：250804
-#规则数：5043
+#版本：2.9
+#更新日期：251031
+#规则数：5069
 
 #主页：https://github.com/2Gardon/SM-Ad-FuckU-hosts/blob/master/SMAdHosts
 #订阅：https://raw.githubusercontent.com/2Gardon/SM-Ad-FuckU-hosts/refs/heads/master/SMAdHosts
@@ -158,6 +158,8 @@ payload:
 - DOMAIN,mfp.deliver.ifeng.com
 - DOMAIN,stadig.ifeng.com
 - DOMAIN,api.newad.ifeng.com #信息流广告图
+- DOMAIN,bdmap1.ifeng.com  #网页信息流广告位+文字，显示的一片空白布局去不掉
+- DOMAIN,survey.news.ifeng.com  #网页底部横幅轮播新闻+“打开”按钮
 #搜狐新闻(含开屏)
 - DOMAIN,m.ads.sohu.com
 - DOMAIN,r.ads.sohu.com
@@ -285,7 +287,7 @@ payload:
 #高德地图(①开屏②③横幅和通知中心？№④№ 测试⑤play版15.0返场开屏广告⑥⑦№)
 - DOMAIN,optimus-ads.amap.com
 - DOMAIN,store.is.autonavi.com
-- DOMAIN,adiu.amap.com
+#- DOMAIN,adiu.amap.com  #误杀顺风车主接不到单
 - DOMAIN,cgicol.amap.com
 - DOMAIN,awaken.amap.com
 - DOMAIN,amap-aos-info-nogw.amap.com
@@ -293,7 +295,7 @@ payload:
 - DOMAIN,optimus-ads-ykx.amap.com
 #滴滴（①开屏广告会误伤主页一些图标的图）
 #- DOMAIN,img-ys011.didistatic.com
-- DOMAIN,adtrack.xiaojukeji.com  #追踪
+#- DOMAIN,adtrack.xiaojukeji.com  #滴滴顺风车主页面闪退到没网界面
 #去哪儿旅行（①顶部横幅广告图②开屏广告③强制升级弹窗）
 #- DOMAIN,qimgs.qunarzz.com
 - DOMAIN,homefront.qunar.com
@@ -455,13 +457,24 @@ payload:
 - DOMAIN,docerad.wps.cn
 - DOMAIN,update.thread0.com  #自定义水印相机更新？
 #百度输入法上传你输入了什么，副作用云联想词加载不出来。
-- DOMAIN,udpolimenew.baidu.com
+#- DOMAIN,udpolimenew.baidu.com
 - DOMAIN,udpolimeok.baidu.com
 - DOMAIN,upl.baidu.com
 - DOMAIN,ads.uutest.cn  #【测网速】
-#网页[美国地址生成器]弹窗广告①上面②中间
+#网页[美国地址生成器]弹窗广告①上面②中间弹窗③几乎铺满全屏的大弹窗
 - DOMAIN,offfurreton.com
 - DOMAIN,gloaphoo.net
+- DOMAIN,firsecuckoo.com
+#茄子快传(SHAREit)
+- DOMAIN,api-user.dalyfeds.com  #屏蔽底栏[发现]页的短视频和[游戏]裡满屏的小游戏
+- DOMAIN,mcds.dalyfeds.com  #开屏广告、[我的]页面广告、主页右下角伸缩贴图广告
+- DOMAIN,rs.dalyfeds.com  #广告素材
+- DOMAIN,www.pullcf.com  #首页的广告
+- DOMAIN,www.pullcm.com  #好像没影响
+- DOMAIN,adconf.rqmob.com
+- DOMAIN,adcs.rqmob.com
+- DOMAIN,api.rqmob.com
+- DOMAIN,static.rqmob.com  #首页上半部分的横幅视频、点进文件全屏弹窗、搜索小横幅广告
 
 
 #———————其•他———————
@@ -919,6 +932,7 @@ payload:
 
 #DNS，可能会导致hosts失效
 - DOMAIN,httpdns.c.cdnhwc2.com
+- DOMAIN,httpdns1.cc.cdnhwc5.com
 - DOMAIN,httpdns.pro
 - DOMAIN,httpdns.alicdn.com
 - DOMAIN,dns.qq.com
@@ -948,7 +962,6 @@ payload:
 #- DOMAIN,httpdns.push.oppomobile.com
 - DOMAIN,httpdns.volcengineapi.com
 - DOMAIN,httpdns.zybang.com
-- DOMAIN,httpdns1.cc.cdnhwc5.com
 - DOMAIN,lofter.httpdns.c.163.com
 - DOMAIN,music.httpdns.c.163.com
 - DOMAIN,httpdns.immomo.com
@@ -1488,7 +1501,7 @@ payload:
 - DOMAIN,hydra.alibaba.com
 - DOMAIN,orange-dc.alibaba.com
 - DOMAIN,o2o-ad-clicking.alibaba.com
-- DOMAIN,appdownload.alicdn.com
+#- DOMAIN,appdownload.alicdn.com  #闲鱼聊天发送图片界面初始化被卡住
 #- DOMAIN,download.alicdn.com 影响酷安部分阿里系APP下载，定制版淘宝更新资源包
 - DOMAIN,ossgw.alicdn.com
 - DOMAIN,gma.alicdn.com
@@ -1557,7 +1570,7 @@ payload:
 - DOMAIN,sjarvis.taobao.com
 - DOMAIN,h-adashx4yt.ut.taobao.com
 - DOMAIN,openacs.m.taobao.com
-- DOMAIN,msgacs.m.taobao.com
+#- DOMAIN,msgacs.m.taobao.com  淘宝和店铺聊天消息
 - DOMAIN,acs4public.m.taobao.com
 - DOMAIN,accscdn4public.m.taobao.com
 - DOMAIN,qh-material.taobao.com  #莉景天气开屏广告
@@ -1751,7 +1764,7 @@ payload:
 - DOMAIN,sjh.baidu.com
 - DOMAIN,ns-strategy.cdn.bcebos.com
 - DOMAIN,fc1tn.baidu.com
-- DOMAIN,bj.bcebos.com
+#- DOMAIN,bj.bcebos.com  酷友反馈误杀理想汽车APP驻车照片。
 - DOMAIN,fc-image.cdn.bcebos.com
 - DOMAIN,fc2tn.baidu.com
 - DOMAIN,fc4tn.baidu.com
@@ -2721,13 +2734,13 @@ payload:
 - DOMAIN,miav-cse.avlyun.com
 - DOMAIN,miav-cse.avlyun.com
 #禁用后将无法云扫描病毒
-127.0.0.1 etl-xlmc-ssl.sandai.net
-127.0.0.1 cn.app.chat.xiaomi.net
+- DOMAIN,etl-xlmc-ssl.sandai.net
+- DOMAIN,cn.app.chat.xiaomi.net
 #屏蔽系统更新
-- DOMAIN,update.miui.com
+#- DOMAIN,update.miui.com
 #小米rom下载加速（备用IP香港163.181.35.44，182.239.104.89，台北47.246.36.217，47.246.37.220）
-47.246.37.220 bigota.d.miui.com
-47.246.37.220 hugeota.d.miui.com
+#47.246.37.220 bigota.d.miui.com
+#47.246.37.220 hugeota.d.miui.com
 #快应用
 - DOMAIN,qr.quickapp.cn
 - DOMAIN,qrcdn.quickapp.cn
@@ -3490,6 +3503,7 @@ payload:
 - DOMAIN,events.ads.vungle.com
 - DOMAIN,logs.ads.vungle.com
 - DOMAIN,cdn-lb.vungle.com
+- DOMAIN,logs-cn.ads.vungle.com
 
 - DOMAIN,cm.adkmob.com
 - DOMAIN,ssdk.adkmob.com
@@ -3543,6 +3557,22 @@ payload:
 - DOMAIN,api.yfanads.com
 - DOMAIN,nl-new-cdn-ssplib-europe-west4-b-hb.rayjump.com
 #- DOMAIN,yandex.ru 【vpnify】底部横幅和弹窗，看上去会误杀很多俄罗斯的yandex网站的内容
+#从茄子快传(SHAREit)抓出的广告域名
+- DOMAIN,noti-asia.adsmoloco.com
+- DOMAIN,plutus.lacunads.com
+- DOMAIN,adx.mossru.com
+- DOMAIN,tk.mossru.com
+- DOMAIN,tkda.mossru.com
+- DOMAIN,sg-new-ssplib-asia-southeast1-b-hb.rayjump.com
+- DOMAIN,sg-new-ssplib-asia-southeast1-c-hb.rayjump.com
+- DOMAIN,log.sgsnssdk.com
+- DOMAIN,mediation-sg.pangle.io
+- DOMAIN,mediation-sg2-log.pangle.io
+- DOMAIN,api.dollphoin.site
+- DOMAIN,api.inmense.site
+- DOMAIN,api.kickoffo.site
+- DOMAIN,api.onegg.site
+#————SHAREit End————
 
 
 #=========各大广告联盟=========
@@ -4069,6 +4099,7 @@ payload:
 - DOMAIN,ujoy.anythinktech.com
 - DOMAIN,aa.birdgesdk.com
 - DOMAIN,pitk.birdgesdk.com
+- DOMAIN,api.bridgeoos.com
 #天目广告
 - DOMAIN,www.admobile.top
 - DOMAIN,a.admobile.top
