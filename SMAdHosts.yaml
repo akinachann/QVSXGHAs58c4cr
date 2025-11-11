@@ -1543,7 +1543,7 @@ payload:
 - DOMAIN,adash.m.taobao.com
 - DOMAIN,adashbc.ut.taobao.com
 - DOMAIN,adashx4ae.ut.taobao.com
-- DOMAIN,h-adashx.ut.taobao.com
+#- DOMAIN,h-adashx.ut.taobao.com
 - DOMAIN,adashx.ut.cainiao.com
 - DOMAIN,adashxgc.ut.taobao.com
 - DOMAIN,audid-api.taobao.com
