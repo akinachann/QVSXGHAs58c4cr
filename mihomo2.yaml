@@ -1,0 +1,662 @@
+#开始编辑配置时，心中牢记缩进和冒号引号，任何不懂，查看官方wiki：https://wiki.metacubex.one
+#修改配置后如果内核不能启动，请查看日志，日志中会告诉你配置第几行写错
+#-----------------------------------------------------------------------------
+#魔法订阅全局设置
+pp: &pp
+  type: http
+  interval: 86400
+  health-check:
+    enable: true
+    url: https://www.gstatic.com/generate_204
+#    url: http://cp.cloudflare.com/generate_204
+#    url: http://connectivitycheck.platform.hicloud.com/generate_204
+    interval: 900
+    timeout: 3000
+    lazy: true
+  exclude-filter: "(?i)永久|服|群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|教程|关注|更新|作者|加入|建议|续费|USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author"           
+
+#-------------------------------代理使用排除-------------------------------
+use: &use   
+    use:
+      - magical_index_1
+#      - magical_index_2
+      - magical_index_3
+      - magical_index_4
+#      - magical_index_5
+use_better_hk: &use_better_hk
+    use:
+      - magical_index_1
+      - magical_index_2
+      - magical_index_3
+      - magical_index_4 
+#      - magical_index_5
+use_better_jp: &use_better_jp
+    use:
+      - magical_index_1
+      - magical_index_2
+      - magical_index_3
+      - magical_index_4
+#      - magical_index_5
+use_better_us: &use_better_us
+    use:
+#      - magical_index_1
+      - magical_index_2
+#      - magical_index_3 
+      - magical_index_4
+      - magical_index_5
+      
+use_better_tg: &use_better_tg
+    use:
+      - magical_index_2
+
+#------------------------------------------------------------------------------
+#如果想要修改魔法名，需要全改，建议使用编辑器的查找替换功能
+proxy-providers:
+  magical_index_1: #酷狗
+    type: file
+#    url: "https://www.kdcloud.uk/api/v1/client/subscribe?token=765747b604705fecda950d5c6eb70026"
+#    url: "https://checkhere.top/link/QcLPGkVTxwXUzIuy?clash=1"
+    path: ./proxy_provider/magical_index_1.yaml
+    override: 
+      additional-prefix: "A "
+      
+  magical_index_2: #宝可梦
+    <<: *pp
+#    url: "https://pokelink.xn--4gsvmh74cwxi.cn/api/v1/client/subscribe?token=fb9064b718dddb95b57b6aa54b2dc5b1"    
+    url: "https://pokelink.xn--4gsvmh74cwxi.cn/api/v1/client/subscribe?token=7348ce5be682e92efd90cb931e366165"
+    path: ./proxy_provider/magical_index_2.yaml
+    override: 
+      additional-prefix: "B "
+      
+  magical_index_3: #sky
+    <<: *pp
+    url: "https://skysub1.fawnnode.xyz/link/Ey2Jo6I1aAdTQV0T?clash=1"
+    path: ./proxy_provider/magical_index_3.yaml
+    override: 
+      additional-prefix: "C "
+            
+  magical_index_4: #Kitty
+    <<: *pp
+    url: "https://1.suscri.ru/oosaka/b7ace4d8034bc996bcbe146095c8a7f4"
+    path: ./proxy_provider/magical_index_4.yaml
+    override: 
+      additional-prefix: "D "
+    
+  magical_index_5: #69云
+    <<: *pp
+    url: "https://checkhere.top/link/QcLPGkVTxwXUzIuy?clash=1"
+    path: ./proxy_provider/magical_index_5.yaml
+    override: 
+      additional-prefix: "E "    
+#------------------------------------------------------------------------------
+#代理组全局设置
+ps: &ps #智能内核选择
+#    type: smart
+    type: url-test #兼容传统内核
+#    policy-priority: "A:1;B:1.2;C:1.5;D:1.2;E:2" 
+# <1：提高优先级（降低延迟权重） >1：降低优先级（增加延迟权重） =0：总是优先使用（不推荐）
+    uselightgbm: true # 启用 LightGBM 模型预测
+    collectdata: true
+    strategy: sticky-sessions
+#    lgbm-auto-update: true
+#    lgbm-update-interval: 72
+#    lgbm-url: "https://github.com/vernesong/mihomo/releases/download/LightGBM-Model/Model.bin"
+
+# 代理组健康检查
+    interval: 7200
+    lazy: true
+    timeout: 5000
+    url: 'https://www.gstatic.com/generate_204'
+
+#------------------------------------------------------------------------------
+mixed-port: 7890
+tproxy-port: 9898
+redir-port: 9797
+mode: rule
+allow-lan: true
+unified-delay: true
+tcp-concurrent: true
+find-process-mode: always
+log-level: warning #warning #silent
+#interface-name: tun0  如果需要配合VPN嵌套使用，需使用此功能
+ipv6: true
+#关掉后可能在部分三星手机上出现dns泄露，volte不可用等问题，目前IPv6可以正常使用，不建议关闭
+external-controller: 0.0.0.0:9090
+external-ui: ./dashboard
+external-ui-url: "https://github.com/Zephyruso/zashboard/releases/latest/download/dist.zip"
+
+profile:
+  store-selected: true
+  store-fake-ip: true
+
+#------------------------------------------------------------------------------ 
+#嗅探器关闭后可能出现连接本机热点的设备无法上网的问题
+sniffer:
+  enable: true
+  override-destination: false
+  sniff:
+    HTTP:
+      ports: [80, 443, 8080-8880]
+      override-destination: true
+    TLS:
+      ports: [443, 853, 8443]
+    QUIC:
+      ports: [443, 853, 8443]
+  skip-domain: # 如遇需内部通信的应用请放行该域名
+    - "+.push.apple.com"
+    - "Mijia Cloud"
+
+#tun必须开启，否则将无法代理流量，如网页打开慢，电报卡连接中，
+#可以尝试更换堆栈，同一堆栈在不同设备上体验不同，自行尝试。
+#更换为非gvisor堆栈可能导致IPv6出现问题
+tun:
+#  enable: true
+  enable: false
+  stack: gvisor #system/gvisor/mixed
+  device: Meta
+  auto-route: true
+  auto-detect-interface: true
+  strict-route: false
+  udp-timeout: 300
+  dns-hijack: 
+    - any:53
+    - tcp://any:53
+#exclude-package内填写的包名，网络流量不经过tun，相当于黑名单，但是该应用的dns请求仍会被clash处理，这可能导致问题
+  exclude-uid: []
+  exclude-package:
+    - com.hpbr.bosszhipin #boss直聘
+    - com.sankuai.meituan #美团     
+    - com.taobao.idlefish #闲鱼
+    - com.taobao.taobao #淘宝    
+    
+dns:
+  enable: true
+  ipv6: true
+  cache-algorithm: arc
+  prefer-h3: true
+  listen: 0.0.0.0:1053
+  enhanced-mode: fake-ip
+#  enhanced-mode: redir-host
+  fake-ip-range: 198.18.0.1/16
+  fake-ip-range6: fdfe:dcba:9876::/64  
+  fake-ip-filter:
+    - "rule-set:Fake-IP-Filter"
+    - "rule-set:cn_domain"    
+    - "rule-set:private_domain"
+    - "rule-set:fcm_domain"
+    - +.push.apple.com
+  default-nameserver:
+    - 223.5.5.5
+    - 1.12.12.12
+    - 8.8.8.8
+    - 1.0.0.1
+    #方案1，只用国内doh解析所有
+  nameserver:
+    - https://doh.pub/dns-query
+    - https://dns.alidns.com/dns-query
+
+    #方案2，国内强制使用阿里腾讯，国外用谷歌和cf
+#  nameserver-policy:
+#    "rule-set:cn_domain":
+#      - https://dns.alidns.com/dns-query
+#      - https://doh.pub/dns-query
+#  direct-nameserver:
+#    - https://doh.pub/dns-query
+#    - https://dns.alidns.com/dns-query
+#  proxy-server-nameserver:
+#    - https://doh.pub/dns-query
+#    - https://dns.alidns.com/dns-query
+#  nameserver:
+#    - https://cloudflare-dns.com/dns-query
+#    - https://dns.google/dns-query
+
+hosts:
+  local: [127.0.0.1, 192.168.1.98]
+
+#------------------------------------------------------------------------------
+proxies:
+  - name: 🕹️ DNS_Hijack
+    type: dns
+
+pn: &pn #proxy names
+      - 🪄 起飞
+      - 🇭🇰 香港
+      - 🇺🇲 美国
+      - 🇹🇼 台湾
+      - 🇯🇵 日本
+      - 🇰🇷 韩国
+      - 🇸🇬 新加坡
+      - 🚀 手动选择
+      - 📝 其他国家
+      - 🀄️ 最中幻想
+
+#代理组
+proxy-groups:
+  - name: 🪄 起飞
+    type: select
+    proxies:
+      - 🇭🇰 香港
+      - 🇺🇲 美国
+      - 🇹🇼 台湾
+      - 🇯🇵 日本
+      - 🇰🇷 韩国
+      - 🇸🇬 新加坡
+      - 🚀 手动选择
+      - 📝 其他国家
+      - ♻️ 自动选择
+      - 🀄️ 最中幻想
+
+#-------------------------国家&地区---------------------------------
+  - name: 🇭🇰 香港_c
+    <<: [*ps,*use_better_hk]
+    filter: '(?i)港|hk|hongkong|hong kong'
+    exclude-filter: '(?i)/b(专线|5x|x5|10x|x10)\b'
+
+  - name: 🇭🇰 香港
+    type: fallback
+    proxies:
+      - 🇭🇰 香港_c
+      - 🏰 香港堡垒
+
+  - name: 🏰 香港堡垒
+    <<: *ps
+    use:
+      - magical_index_5
+    filter: '(?i)港|hk|hongkong|hong kong'
+    exclude-filter: '(?i)5x|x5|10x|x10'
+#    hidden: true
+
+  - name: 🇹🇼 台湾
+    <<: [*ps, *use]
+#    type: url-test
+    filter: '(?i)台|tw|taiwan|tai wan'    
+#    exclude-filter: '(?i)专线|5x|x5|10x|x10'
+    
+  - name: 🇸🇬 新加坡
+    <<: [*ps, *use]
+#    type: url-test
+    filter: '(?i)(新|狮|sg|singapore)'    
+    exclude-filter: '(?i)\b(5x|x5|10x|x10)\b'
+    
+  - name: 🇯🇵 日本
+    <<: [*ps, *use_better_jp]
+#    type: url-test
+    filter: '(?i)日|jp|japan'
+    exclude-filter: '(?i)03 Amazon|樱花04|樱花05|🇯🇵 日本02|🇯🇵 日本-01'
+    
+  - name: 🇰🇷 韩国
+    <<: [*ps, *use]
+#    type: url-test
+    filter: '(?i)韩|韓|kr|korea'
+    exclude-filter: '(?i)\b(5x|x5|10x|x10)\b'
+    
+  - name: 🇺🇲 美国
+    <<: [*ps, *use]
+    filter: '(?i)(美国|USA|美國|us|US|United States|America)'
+    exclude-filter: '(?i)Australia|AUS|5x|x5|10x|x10'
+
+  - name: 🛡️ 美国防线
+    <<: [*ps, *use_better_us]
+    type: url-test
+    filter: '(?i)(美国|USA|美國|us|US|United States|America)'
+    exclude-filter: '(?i)Australia|AUS|专线|Frantech|07 San José'
+          
+  - name: 📝 其他国家
+    <<: *use
+    type: select
+    exclude-filter: '(?i)USA|US|United States|America|Japan|JP|Korea|KR|Taiwan|tai wan|TW|Singapore|SG|Hong Kong|HK|🇺🇲 美国|美|🇯🇵 日本|🇰🇷 韩国|韓|🇹🇼 台湾|🇸🇬 新加坡|狮|🇭🇰 香港'
+
+  - name: 🐬 漏网之鱼
+    type: select
+    proxies: *pn
+
+  - name: 🚀 手动选择
+    type: select
+    include-all: true
+    exclude-filter: 🕹️ DNS_Hijack
+    
+  - name: ♻️ 自动选择
+    <<: *use
+    type: url-test
+    filter: '(?i)(🇭🇰|🇹🇼|🇸🇬|港|hk|hongkong|hong kong|台|tw|taiwan|tai wan|新|sg|singapore)'
+                
+#---------------------自定义分流规则------------------------------    
+  - name: 🇬 Google
+    type: select
+    proxies: *pn
+
+  - name: 🤖 Ai
+    type: select
+    proxies:
+      - 🛡️ 美国防线
+      - 🇸🇬 新加坡
+      - 🚀 手动选择
+      
+  - name: 🎵 YouTube Music
+    type: select
+    proxies: *pn   
+
+  - name: 🐙 github
+    type: select
+    proxies: *pn    
+
+  - name: 🪟 Microsoft
+    type: select
+    proxies: *pn      
+
+  - name: 📺 YouTube
+    type: select
+    proxies: *pn
+
+  - name: ✈️ Telegram
+    type: smart
+    <<: [*use_better_tg]
+    filter: '(?i)(新|狮|sg|singapore)'    
+    exclude-filter: '(?i)\b(5x|x5|10x|x10)\b'
+
+  - name: 🎡 googleplay
+    type: select
+    proxies: *pn
+
+  - name: 🐦 X
+    type: select
+    proxies: *pn      
+
+  - name: 🎵 TikTok
+    type: select
+    proxies: *pn    
+
+  - name: 📰 reddit
+    type: select
+    proxies: *pn
+    
+  - name: 🎮 twitch
+    type: select
+    proxies: *pn 
+
+  - name: 🎼 Spotify
+    type: select
+    proxies: *pn
+
+  - name: 📢 FCM
+    <<: *ps       
+    type: select
+    proxies:
+      - 🀄️ 最中幻想
+      - 🇹🇼 台湾
+      - 🇭🇰 香港 
+      - 🇺🇲 美国
+
+#------------------------------------------------------------------------------    
+#不重要的分类
+  - name: magical_index_1
+    type: select
+    use:
+      - magical_index_1
+    hidden: true      
+       
+  - name: magical_index_2
+    type: select
+    use:
+      - magical_index_2
+    hidden: true      
+
+  - name: magical_index_3
+    type: select
+    use:
+      - magical_index_3
+    hidden: true      
+
+  - name: magical_index_4
+    type: select
+    use:
+      - magical_index_4
+    hidden: true      
+
+  - name: magical_index_5
+    type: select
+    use:
+      - magical_index_5
+    hidden: true
+
+#----------------------------------------------------------------            
+  - name: 🤡 反反诈
+    type: select
+    proxies:
+      - REJECT
+      - PASS
+
+  - name: 🤔 diyhosts
+    type: select
+    proxies:
+      - REJECT
+      - PASS
+      
+  - name: 🤬 广告滚蛋
+    type: select
+    proxies:
+      - REJECT
+      - PASS      
+
+  - name: 🀄️ 最中幻想
+    type: select
+    proxies:
+      - DIRECT
+    udp: true
+    hidden: true
+    
+#-------------------------------------------------------------------
+#用户自定义直连/代理规则，文件在模块目录/rule-providers/
+#如有需要请参考官方文档写入
+#如果想要删除两个自定义规则，需要把上面dns配置内对自定义规则的设置删除，否则内核将无法启动
+rule-anchor:
+  classical: &classical
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+
+  ipcidr: &ipcidr
+    type: http
+    behavior: ipcidr
+    format: mrs
+    interval: 86400
+
+  domain: &domain
+    type: http
+    behavior: domain
+    format: mrs
+    interval: 86400
+
+  domain_yaml: &domain_yaml
+    type: http
+    behavior: domain
+    format: yaml
+    interval: 86400
+    
+rule-providers:  
+  Fake-IP-Filter:
+    <<: *domain
+    path: ./rule_provider/Fake-IP-Filter.mrs
+    url: "https://github.com/QuixoticHeart/rule-set/raw/refs/heads/ruleset/meta/domain/fake-ip-filter.mrs"
+  cn_domain:
+    <<: *domain
+    path: ./rule_provider/cn_domain.mrs
+    url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/cn.mrs"
+  cn_ip:
+    <<: *ipcidr
+    path: ./rule_provider/cn_ip.mrs
+    url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geoip/cn.mrs"
+  private_domain:
+    <<: *domain
+    path: ./rule_provider/private_domain.mrs
+    url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/private.mrs" 
+  private_ip:
+    <<: *ipcidr
+    path: ./rule_provider/private_ip.mrs
+    url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geoip/private.mrs"  
+  fcm_domain:
+    <<: *domain
+    path: ./rule_provider/fcm_domain.mrs
+    url: "https://github.com/QuixoticHeart/rule-set/raw/refs/heads/ruleset/meta/domain/googlefcm.mrs"
+  fcm_ip:
+    <<: *ipcidr
+    path: ./rule_provider/fcm_ip.mrs
+    url: "https://github.com/QuixoticHeart/rule-set/raw/refs/heads/ruleset/meta/ipcidr/googlefcm.mrs"
+
+#--------------------自定义规则组--------------------   
+  Ai:
+    <<: *domain
+    path: ./rule_provider/ai.mrs
+    url: "https://raw.githubusercontent.com/DustinWin/ruleset_geodata/refs/heads/mihomo-ruleset/ai.mrs"
+  gemini:
+    <<: *classical
+    path: ./rule_provider/gemini.yaml
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Gemini/Gemini.yaml"
+  youtube:
+    <<: *domain
+    path: ./rule_provider/youtube.mrs
+    url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/youtube.mrs"
+  google_domain:
+    <<: *domain
+    path: ./rule_provider/google_domain.mrs
+    url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/google.mrs"
+  google_ip:
+    <<: *ipcidr
+    path: ./rule_provider/google_ip.mrs
+    url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geoip/google.mrs"
+  github:
+    <<: *classical
+    path: ./rule_provider/github.yaml
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/GitHub/GitHub.yaml"
+  microsoft:
+    <<: *domain
+    path: ./rule_provider/microsoft.mrs
+    url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/microsoft.mrs"
+#  microsoft_cn:
+#    <<: *domain
+#    path: ./rule_provider/microsoft_cn.mrs
+#    url: "https://github.com/QuixoticHeart/rule-set/raw/refs/heads/ruleset/meta/domain/microsoft-cn.mrs"    
+  spotify:
+    <<: *domain
+    path: ./rule_provider/Spotify_domain.mrs
+    url: "https://raw.githubusercontent.com/DustinWin/ruleset_geodata/refs/heads/mihomo-ruleset/spotify.mrs"  
+  telegram:
+    <<: *classical
+    path: ./rule_provider/telegram.yaml
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Telegram/Telegram_No_Resolve.yaml"
+  reddit:
+    <<: *domain
+    path: ./rule_provider/reddit.mrs
+    url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/reddit.mrs"    
+  X:
+    <<: *domain
+    path: ./rule_provider/X.mrs
+    url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/twitter.mrs"    
+  tiktok:
+    <<: *domain
+    path: ./rule_provider/tiktok.mrs
+    url: "https://github.com/DustinWin/ruleset_geodata/raw/refs/heads/mihomo-ruleset/tiktok.mrs"    
+  quora:
+    <<: *domain
+    path: ./rule_provider/quora.mrs
+    url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/quora.mrs"
+  twitch:
+    <<: *domain
+    path: ./rule_provider/twitch.mrs
+    url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/twitch.mrs"
+  googleplay:
+    <<: *domain
+    path: ./rule_provider/googleplay.mrs
+    url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/google-play.mrs"
+
+  Apple_domain:
+    <<: *domain
+    path: ./rule_provider/Apple_domain.mrs
+    url: "https://v6.gh-proxy.com/https://raw.githubusercontent.com/QuixoticHeart/rule-set/refs/heads/ruleset/meta/domain/apple.mrs"
+  Apple_ip:
+    <<: *ipcidr
+    path: ./rule_provider/Apple_ip.mrs
+    url: "https://v6.gh-proxy.com/https://raw.githubusercontent.com/QuixoticHeart/rule-set/refs/heads/ruleset/meta/ipcidr/apple.mrs"
+
+#添加的hosts
+  SMAdHosts:
+    <<: *classical
+    path: ./rule_provider/SMAdHosts.yaml
+    url: "https://raw.githubusercontent.com/akinachann/QVSXGHAs58c4cr/refs/heads/main/SMAdHosts.yaml"
+
+  AWAvenue:
+    <<: *domain
+    path: ./rule_provider/AWAvenue-Ads-Rule-Clash.mrs
+    url: "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/Filters/AWAvenue-Ads-Rule-Clash.mrs"
+    
+#  AdvertisingLite:
+#    <<: *classical
+#    path: ./rule_provider/AdvertisingLite.yaml
+#    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/AdvertisingLite/AdvertisingLite_Classical.yaml"
+
+#  anti-ad:
+#    <<: *domain_yaml
+#    path: ./rule_provider/anti-ad.yaml
+#    url: "https://raw.githubusercontent.com/privacy-protection-tools/anti-AD/master/anti-ad-clash.yaml"
+
+#  anti-ad-white:
+#    <<: *domain_yaml
+#    path: ./rule_provider/anti-ad-white.yaml
+#    url: "https://raw.githubusercontent.com/privacy-protection-tools/dead-horse/master/anti-ad-white-for-clash.yaml"
+     
+#添加的🤡 反反诈
+  anti-antifraud:
+    <<: *classical
+    path: ./rule_provider/anti-antifraud.yaml
+    url: "https://raw.githubusercontent.com/akinachann/QVSXGHAs58c4cr/refs/heads/main/anti-antifraud.yaml"
+
+#--------------------自定义分流规则--------------------
+rules:    
+  - DST-PORT,53,🕹️ DNS_Hijack
+
+  - DOMAIN-REGEX,^.*mtalk.google.com,📢 FCM
+  - rule-set,fcm_ip,📢 FCM
+
+#---------------------------防误伤--------------------------
+  - rule-set,spotify,🎼 Spotify
+    
+#---------------------------去广告--------------------------
+  - rule-set,anti-antifraud,🤡 反反诈
+  - rule-set,SMAdHosts,🤔 diyhosts
+  - rule-set,AWAvenue,🤬 广告滚蛋
+#  - rule-set,AdvertisingLite,🤬 广告滚蛋
+#  - rule-set,anti-ad,🤬 广告滚蛋
+#  - rule-set,anti-ad-white,🀄️ 最中幻想
+  
+#-----------------domain&ipcidr---------------------
+#  - rule-set,microsoft_cn,🀄️ 最中幻想
+  - rule-set,Ai,🤖 Ai
+  - rule-set,github,🐙 github
+  - rule-set,microsoft,🪟 Microsoft
+  - rule-set,tiktok,🎵 TikTok
+  - rule-set,X,🐦 X
+  - rule-set,twitch,🎮 twitch
+  - rule-set,Apple_domain,🀄️ 最中幻想
+  - rule-set,Apple_ip,🀄️ 最中幻想,no-resolve
+  
+#---------YouTube music 分应用代理-----------------
+  - process-name,com.google.android.apps.youtube.music,🎵 YouTube Music
+  - process-name,com.metrolist.music,🎵 YouTube Music
+  
+#-----------------classical-------------------------------
+  - rule-set,reddit,📰 reddit
+  - rule-set,telegram,✈️ Telegram 
+  - rule-set,gemini,🇬 Google
+  - rule-set,googleplay,🎡 googleplay
+  - rule-set,youtube,📺 YouTube
+  - rule-set,google_ip,🇬 Google
+  - rule-set,google_domain,🇬 Google
+
+#-----------------------------------------------------
+  - rule-set,cn_ip,🀄️ 最中幻想
+  - rule-set,cn_domain,🀄️ 最中幻想
+  - rule-set,private_ip,🀄️ 最中幻想
+  - rule-set,private_domain,🀄️ 最中幻想
+  
+  - MATCH,🐬 漏网之鱼
