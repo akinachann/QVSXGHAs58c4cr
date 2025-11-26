@@ -1,5 +1,6 @@
 #开始编辑配置时，心中牢记缩进和冒号引号，任何不懂，查看官方wiki：https://wiki.metacubex.one
 #修改配置后如果内核不能启动，请查看日志，日志中会告诉你配置第几行写错
+#https://raw.githubusercontent.com/akinachann/QVSXGHAs58c4cr/refs/heads/meow/mihomo2.yaml
 #-----------------------------------------------------------------------------
 #魔法订阅全局设置
 pp: &pp
