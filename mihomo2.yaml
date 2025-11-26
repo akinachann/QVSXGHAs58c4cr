@@ -349,7 +349,7 @@ proxy-groups:
     proxies: *pn
 
   - name: ✈️ Telegram
-    type: smart
+    type: url-test
     <<: [*use_better_tg]
     filter: '(?i)(新|狮|sg|singapore)'    
     exclude-filter: '(?i)\b(5x|x5|10x|x10)\b'
