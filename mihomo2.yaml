@@ -1,6 +1,6 @@
 #开始编辑配置时，心中牢记缩进和冒号引号，任何不懂，查看官方wiki：https://wiki.metacubex.one
 #修改配置后如果内核不能启动，请查看日志，日志中会告诉你配置第几行写错
-#https://raw.githubusercontent.com/akinachann/QVSXGHAs58c4cr/refs/heads/meow/mihomo2.yaml
+#https://raw.githubusercontent.com/akinachann/QVSXGHAs58c4cr/refs/heads/meow/mihomo.yaml
 #-----------------------------------------------------------------------------
 #魔法订阅全局设置
 pp: &pp
@@ -94,7 +94,7 @@ proxy-providers:
 ps: &ps #智能内核选择
 #    type: smart
     type: url-test #兼容传统内核
-#    policy-priority: "A:1;B:1.2;C:1.5;D:1.2;E:2" 
+    policy-priority: "A:1;B:2;C:0.5;D:0;E:1.2" 
 # <1：提高优先级（降低延迟权重） >1：降低优先级（增加延迟权重） =0：总是优先使用（不推荐）
     uselightgbm: true # 启用 LightGBM 模型预测
     collectdata: true
@@ -644,6 +644,7 @@ rules:
 #---------YouTube music 分应用代理-----------------
   - process-name,com.google.android.apps.youtube.music,🎵 YouTube Music
   - process-name,com.metrolist.music,🎵 YouTube Music
+  - domain-suffix,weatherapi.intl.xiaomi.com,🀄️ 最中幻想
   
 #-----------------classical-------------------------------
   - rule-set,reddit,📰 reddit
