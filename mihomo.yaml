@@ -14,13 +14,13 @@ pp: &pp
     interval: 900
     timeout: 3000
     lazy: true
-  exclude-filter: "(?i)永久|服|群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|教程|关注|更新|作者|加入|建议|续费|USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author"           
+  exclude-filter: "(?i)永久|服|群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|教程|关注|更新|作者|加入|建议|续费|USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author"
 
 #-------------------------------代理使用排除-------------------------------
 use: &use   
     use:
       - magical_index_1
-#      - magical_index_2
+      - magical_index_2
       - magical_index_3
       - magical_index_4
 #      - magical_index_5
@@ -29,7 +29,7 @@ use_better_hk: &use_better_hk
       - magical_index_1
       - magical_index_2
       - magical_index_3
-      - magical_index_4 
+      - magical_index_4
 #      - magical_index_5
 use_better_jp: &use_better_jp
     use:
@@ -42,7 +42,7 @@ use_better_us: &use_better_us
     use:
 #      - magical_index_1
       - magical_index_2
-#      - magical_index_3 
+#      - magical_index_3
       - magical_index_4
       - magical_index_5
       
@@ -54,7 +54,7 @@ use_better_tg: &use_better_tg
 #如果想要修改魔法名，需要全改，建议使用编辑器的查找替换功能
 proxy-providers:
   magical_index_1: #酷狗
-    type: file
+    <<: *pp
 #    url: "https://www.kdcloud.uk/api/v1/client/subscribe?token=765747b604705fecda950d5c6eb70026"
 #    url: "https://checkhere.top/link/QcLPGkVTxwXUzIuy?clash=1"
     path: ./proxy_provider/magical_index_1.yaml
@@ -270,14 +270,14 @@ proxy-groups:
   - name: 🇹🇼 台湾
     <<: [*ps, *use]
 #    type: url-test
-    filter: '(?i)台|tw|taiwan|tai wan'    
+    filter: '(?i)台|tw|taiwan|tai wan'
 #    exclude-filter: '(?i)专线|5x|x5|10x|x10'
     
   - name: 🇸🇬 新加坡
     <<: [*ps, *use]
 #    type: url-test
-    filter: '(?i)(新|狮|sg|singapore)'    
-    exclude-filter: '(?i)\b(5x|x5|10x|x10)\b'
+    filter: '(?i)(新|狮|sg|singapore)'
+    exclude-filter: '(?i)(2x|3x|10x)'
     
   - name: 🇯🇵 日本
     <<: [*ps, *use_better_jp]
@@ -337,6 +337,10 @@ proxy-groups:
     type: select
     proxies: *pn   
 
+  - name: 📺 YouTube
+    type: select
+    proxies: *pn
+
   - name: 🐙 github
     type: select
     proxies: *pn    
@@ -345,15 +349,11 @@ proxy-groups:
     type: select
     proxies: *pn      
 
-  - name: 📺 YouTube
-    type: select
-    proxies: *pn
-
   - name: ✈️ Telegram
     type: url-test
     <<: [*use_better_tg]
     filter: '(?i)(新|狮|sg|singapore)'    
-    exclude-filter: '(?i)\b(5x|x5|10x|x10)\b'
+    exclude-filter: '(?i)(10x)'
 
   - name: 🎡 googleplay
     type: select
