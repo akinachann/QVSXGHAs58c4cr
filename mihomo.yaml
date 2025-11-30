@@ -283,7 +283,6 @@ proxy-groups:
     <<: [*ps, *use_better_jp]
 #    type: url-test
     filter: '(?i)日|jp|japan'
-    exclude-filter: '(?i)03 Amazon|樱花04|樱花05|🇯🇵 日本02|🇯🇵 日本-01'
     
   - name: 🇰🇷 韩国
     <<: [*ps, *use]
@@ -292,9 +291,11 @@ proxy-groups:
     exclude-filter: '(?i)\b(5x|x5|10x|x10)\b'
     
   - name: 🇺🇲 美国
-    <<: [*ps, *use]
+    <<: *ps
+    use:
+      - magical_index_2
     filter: '(?i)(美国|USA|美國|us|US|United States|America)'
-    exclude-filter: '(?i)Australia|AUS|5x|x5|10x|x10'
+    exclude-filter: '(?i)Australia|AUS|5x|x5|10x|x10|aws'
 
   - name: 🛡️ 美国防线
     <<: [*ps, *use_better_us]
@@ -643,7 +644,7 @@ rules:
   
 #---------YouTube music 分应用代理-----------------
   - process-name,com.google.android.apps.youtube.music,🎵 YouTube Music
-  - process-name,com.metrolist.music,🎵 YouTube Music
+  - process-name,com.anandnet.harmonymusic,🎵 YouTube Music
   - domain-suffix,weatherapi.intl.xiaomi.com,🀄️ 最中幻想
   
 #-----------------classical-------------------------------
